@@ -35,9 +35,9 @@ function Home() {
 
         <div className="carousel-inner" id="carousel">
             <div className='carousel-caption' style={{zIndex:"10"}}>
-                <div class="d-flex justify-content-center">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={search} onChange={(e)=>{setSearch(e.target.value)}}/>
-                    {/* <button class="btn btn-outline-success text-white bg-success" type="submit">Search</button> */}
+                <div className="d-flex justify-content-center">
+                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={search} onChange={(e)=>{setSearch(e.target.value)}}/>
+                    {/* <button className="btn btn-outline-success text-white bg-success" type="submit">Search</button> */}
                 </div>
             </div>
 
@@ -77,9 +77,11 @@ function Home() {
                   .map(filterItems=>{
                     return(
                       <div key={filterItems._id} className="col-12 col-md-6 col-lg-3">
-                        <Card foodName={filterItems.name}
+                        <Card 
+                          foodItem={filterItems}
+                          // foodName={filterItems.name}
                           options={filterItems.options[0]}
-                          imgSrc ={filterItems.img}
+                          // imgSrc ={filterItems.img}
                         />
                       </div>
                     )
