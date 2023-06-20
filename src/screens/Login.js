@@ -22,8 +22,9 @@ export default function Login() {
             alert("Invalid Value Credentials")
         }
         if(json.success){
+          localStorage.setItem("userEmail",credentials.email);
           localStorage.setItem("authToken",json.authToken);
-          console.log(localStorage.getItem("authToken"))
+          console.log(localStorage.getItem("userEmail"))
           Navigate("/")
         }
 
