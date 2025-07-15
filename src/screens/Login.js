@@ -1,5 +1,8 @@
 import React,{useState} from 'react'
 import {Link,useNavigate} from 'react-router-dom'
+const BE_API_BASE_URL = process.env.REACT_APP_BE_API_BASE_URL;
+
+
 
 export default function Login() {
 
@@ -8,7 +11,7 @@ export default function Login() {
     const handleSubmit =async(e)=>{
         e.preventDefault();
         console.log(JSON.stringify({email:credentials.email,password:credentials.password}))
-        const response = await fetch("http://localhost:5000/api/loginuser",{
+        const response = await fetch(`${BE_API_BASE_URL}/api/loginuser`,{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'

@@ -2,6 +2,7 @@ import React,{useEffect,useState} from "react";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+const BE_API_BASE_URL = process.env.REACT_APP_BE_API_BASE_URL;
 
 function Home() {
 
@@ -10,7 +11,8 @@ function Home() {
   const [foodItem,setFoodItem] = useState([]);
   
   const loadData =async ()=>{
-    let response = await fetch("http://localhost:5000/api/foodData",{
+    try{
+    let response = await fetch(`${BE_API_BASE_URL}/api/foodData`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -20,7 +22,11 @@ function Home() {
     setFoodItem(response[0]);
     setFoodCat(response[1]);
     // console.log(response[0],response[1]);
+  }catch(error){
+    console.error("Error fetching food data:", error);
   }
+
+}
 
   useEffect(()=>{
     loadData()

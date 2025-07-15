@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import {Link} from 'react-router-dom'
+const BE_API_BASE_URL = process.env.REACT_APP_BE_API_BASE_URL;
 
 export default function Signup() {
     const [credentials, setcredentials] =useState({name:"",email:"",password:"",geolocation:""})
@@ -7,7 +8,7 @@ export default function Signup() {
     const handleSubmit =async(e)=>{
         e.preventDefault();
         console.log(JSON.stringify({name:credentials.name, email:credentials.email,password:credentials.password,location:credentials.geolocation}))
-        const response = await fetch("http://localhost:5000/api/createuser",{
+        const response = await fetch(`${BE_API_BASE_URL}/api/createuser`,{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'

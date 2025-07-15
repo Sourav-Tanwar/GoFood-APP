@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+const BE_API_BASE_URL = process.env.REACT_APP_BE_API_BASE_URL;
+
 
 export default function MyOrder() {
 
@@ -8,7 +10,7 @@ export default function MyOrder() {
 
     const fetchMyOrder = async () => {
         console.log(localStorage.getItem('userEmail'))
-        await fetch("http://localhost:5000/api/myOrderData", {
+        await fetch(`${BE_API_BASE_URL}/api/myOrderData`, {
             // credentials: 'include',
             // Origin:"http://localhost:3000/login",
             method: 'POST',
