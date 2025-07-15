@@ -1,7 +1,13 @@
 const mongoose = require('mongoose');
+const dotenv = require("dotenv")
 
-// const mongoURI = "mongodb+srv://gofood:"+encodeURIComponent("#Sourav123") +"@cluster0.ocgonvs.mongodb.net/gofoodmern?retryWrites=true&w=majority";
-const mongoURI = "mongodb+srv://gofood:Sourav123@cluster0.ocgonvs.mongodb.net/gofoodmern?retryWrites=true&w=majority";
+
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+  }
+
+
+const mongoURI = process.env.MONGODB_URI
 
 
 const mongoDB =async () =>{
