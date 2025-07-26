@@ -1,8 +1,9 @@
 ### GoFood -APP
 This app is designed for restaurants which users can use for ordering food.
-
+>>>>
 
 #Home Page
+
 
 ![image](https://github.com/user-attachments/assets/11dbca0d-147b-4e70-a198-94a4d92f4591)
 
