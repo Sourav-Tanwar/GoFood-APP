@@ -1,7 +1,7 @@
 ### GoFood -APP
-Live URL - https://go-food-app-rho.vercel.app/
+
 This app is designed for restaurants which users can use for ordering food.
->>>>
+Live URL - https://go-food-app-rho.vercel.app/
 
 #Home Page
 
